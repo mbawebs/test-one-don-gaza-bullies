@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONE DON GAZA BULLIES | Contact</title>
+<link rel="icon" type="image/png" href="assets/hero/logo.png">  
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d6ad2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ODG Bullies">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+.waitlist-box{
+  margin-top:32px;
+  padding:28px;
+  border:1px solid rgba(214,173,47,.35);
+  background:rgba(0,0,0,.35);
+  border-radius:18px;
+}
+.waitlist-box h3{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(2rem,5vw,4rem);
+  margin:0 0 10px;
+  color:#d6ad2f;
+  letter-spacing:1px;
+}
+.waitlist-box p{
+  margin:0 0 22px;
+  opacity:.85;
+}
+.waitlist-form{
+  display:grid;
+  gap:14px;
+}
+.waitlist-form input{
+  width:100%;
+  padding:15px 16px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font:inherit;
+}
+.waitlist-form input::placeholder{
+  color:rgba(255,255,255,.55);
+}
+.waitlist-form button{
+  padding:15px 18px;
+  border:0;
+  border-radius:12px;
+  background:#d6ad2f;
+  color:#111;
+  font-weight:900;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.waitlist-message{
+  margin-top:14px;
+  font-weight:800;
+}
+</style>
+</head>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>  
+
+<body>
+
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/hero/logo.png" alt="One Don Gaza Bullies Logo">
+    <span>ONE DON GAZA BULLIES</span>
+  </a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay"></div>
+
+<aside class="menu-panel">
+  <button class="menu-close" onclick="closeMenu()" aria-label="Close menu">×</button>
+
+  <div class="menu-title">ONE DON GAZA BULLIES</div>
+
+  <a href="index.html" onclick="closeMenu()">Home</a>
+
+  <div class="menu-group">
+    <a href="studs.html" onclick="closeMenu()">Studs</a>
+    <div class="submenu">
+      <a href="studs.html" onclick="closeMenu()">Black Rhyno</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <a href="females.html" onclick="closeMenu()">Females</a>
+    <div class="submenu">
+      <a href="females.html" onclick="closeMenu()">GB Mystic</a>
+      <a href="females.html" onclick="closeMenu()">VMB Celine</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <a href="productions.html" onclick="closeMenu()">Productions</a>
+    <div class="submenu">
+      <a href="productions.html" onclick="closeMenu()">Diplomat</a>
+      <a href="productions.html" onclick="closeMenu()">Wizard</a>
+      <a href="productions.html" onclick="closeMenu()">Spice</a>
+    </div>
+  </div>
+
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</aside>
+
+<header class="page-hero">
+  <div class="badge">CONTACT</div>
+  <h1>CONTACT US</h1>
+  <p class="sub">For stud inquiries, upcoming productions or general questions, feel free to reach out.</p>
+</header>
+
+<section class="contact">
+  <h2>CONTACT US</h2>
+
+  <div class="contact-box">
+    <div class="contact-row"><strong>Location:</strong> Brodheadsville, Pennsylvania 18322</div>
+    <div class="contact-row"><strong>Phone:</strong> 484-541-2296</div>
+    <div class="contact-row"><strong>Instagram:</strong> @one_dongazabullies</div>
+    <div class="contact-row"><strong>Facebook:</strong> One Don Gaza Bullies</div>
+
+    <div class="socials">
+      <a class="social-btn" href="tel:4845412296">
+        <span class="icon">☎</span> Call
+      </a>
+
+      <a class="social-btn" href="sms:4845412296">
+        <span class="icon">✉</span> Text
+      </a>
+
+      <a class="social-btn" href="https://www.instagram.com/one_dongazabullies/" target="_blank">
+        <span class="icon">IG</span> Instagram
+      </a>
+
+      <a class="social-btn" href="https://www.facebook.com/search/top?q=One%20Don%20Gaza%20Bullies" target="_blank">
+        <span class="icon">FB</span> Facebook
+      </a>
+    </div>
+
+    <div class="waitlist-box">
+      <h3>JOIN OUR WAITLIST</h3>
+      <p>Be the first to know about upcoming breedings, available puppies, and exclusive updates.</p>
+
+      <form class="waitlist-form" id="waitlistForm">
+        <input type="text" id="waitlistName" placeholder="Your name" required>
+        <input type="email" id="waitlistEmail" placeholder="Your email" required>
+        <input type="tel" id="waitlistPhone" placeholder="Phone number optional">
+        <button type="submit" id="waitlistBtn">Join Waitlist</button>
+      </form>
+
+      <div class="waitlist-message" id="waitlistMessage"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>ONE DON GAZA BULLIES</strong><br>
+  Brodheadsville, Pennsylvania<br>
+ 
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" onclick="closeLightbox()">×</button>
+  <button class="arrow left" onclick="prevImage()">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="arrow right" onclick="nextImage()">›</button>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://drpfmwdqnktgofxlluyr.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_4Ex_ShO1dYKbUmnSCOvVNg_098EbclB";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+const waitlistForm = document.getElementById("waitlistForm");
+const waitlistBtn = document.getElementById("waitlistBtn");
+const waitlistMessage = document.getElementById("waitlistMessage");
+
+waitlistForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("waitlistName").value.trim();
+  const email = document.getElementById("waitlistEmail").value.trim();
+  const phone = document.getElementById("waitlistPhone").value.trim();
+
+  waitlistBtn.disabled = true;
+  waitlistBtn.textContent = "Submitting...";
+  waitlistMessage.textContent = "";
+
+  const { error } = await supabaseClient
+    .from("waitlist")
+    .insert([{ name, email, phone, source: "contact_page" }]);
+
+  if (error) {
+    waitlistMessage.style.color = "#ff6b6b";
+    waitlistMessage.textContent = "Something went wrong. Please try again.";
+    console.error(error);
+  } else {
+    waitlistMessage.style.color = "#d6ad2f";
+    waitlistMessage.textContent = "Thanks! You've been added to our waitlist.";
+    waitlistForm.reset();
+  }
+
+  waitlistBtn.disabled = false;
+  waitlistBtn.textContent = "Join Waitlist";
+});
+</script>
+
+</body>
+</html>

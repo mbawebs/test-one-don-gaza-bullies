@@ -1,0 +1,15 @@
+{
+  "name": "ONE DON GAZA BULLIES",
+  "short_name": "ODG Bullies",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#030503",
+  "theme_color": "#d6ad2f",
+  "icons": [
+    {
+      "src": "assets/hero/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONE DON GAZA BULLIES | Productions</title>
+<link rel="icon" type="image/png" href="assets/hero/logo.png">  
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d6ad2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ODG Bullies">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+<body>
+
+
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/hero/logo.png" alt="One Don Gaza Bullies Logo">
+    <span>ONE DON GAZA BULLIES</span>
+  </a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay"></div>
+
+<aside class="menu-panel">
+  <button class="menu-close" onclick="closeMenu()" aria-label="Close menu">×</button>
+
+  <div class="menu-title">ONE DON GAZA BULLIES</div>
+
+  <a href="index.html" onclick="closeMenu()">Home</a>
+
+  <div class="menu-group">
+    <a href="studs.html" onclick="closeMenu()">Studs</a>
+    <div class="submenu">
+      <a href="studs.html" onclick="closeMenu()">Black Rhyno</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <a href="females.html" onclick="closeMenu()">Females</a>
+    <div class="submenu">
+      <a href="females.html" onclick="closeMenu()">GB Mystic</a>
+      <a href="females.html" onclick="closeMenu()">VMB Celine</a>
+    </div>
+  </div>
+
+  <div class="menu-group">
+    <a href="productions.html" onclick="closeMenu()">Productions</a>
+    <div class="submenu">
+      <a href="productions.html" onclick="closeMenu()">Diplomat</a>
+      <a href="productions.html" onclick="closeMenu()">Wizard</a>
+      <a href="productions.html" onclick="closeMenu()">Spice</a>
+    </div>
+  </div>
+
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</aside>
+
+<header class="page-hero">
+  <div class="badge">PRODUCTIONS</div>
+  <h1>PRODUCTIONS</h1>
+  <p class="sub">Produced dogs, keepers and young prospects from the program.</p>
+</header>
+
+<section class="dog-section">
+  <div class="dog-list">
+
+    <div class="dog-card">
+      <div class="dog-img" onclick="openLightbox('diplomat',0)">
+        <img src="assets/productions/diplomat.png" alt="GB/ODGB Diplomat">
+      </div>
+
+      <div class="dog-info">
+        <h3>GB/ODGB<br>DIPLOMAT</h3>
+        <div class="lineage">PBK Thor × Gains Bullies Dahlia</div>
+
+        <p>
+          Diplomat is a male production and keeper from PBK Thor and Gains Bullies Dahlia.
+          A promising male with clean bully type, strong presence and the pedigree foundation
+          to help build future productions.
+        </p>
+
+        <div class="click-hint">Click image to view full gallery</div>
+      </div>
+    </div>
+
+    <div class="dog-card reverse">
+      <div class="dog-img" onclick="openLightbox('wizard',0)">
+        <img src="assets/productions/wizard.png" alt="GB/ODGB Wizard">
+      </div>
+
+      <div class="dog-info">
+        <h3>GB/ODGB<br>WIZARD</h3>
+        <div class="lineage">PBK Thor × Gains Bullies Dahlia</div>
+
+        <p>
+          Wizard is a young male production from PBK Thor and Gains Bullies Dahlia.
+          Built with impressive bone, balanced structure and strong bully type,
+          Wizard represents the next generation of the One Don Gaza Bullies program.
+        </p>
+
+        <div class="click-hint">Click image to view full gallery</div>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img" onclick="openLightbox('spice',0)">
+        <img src="assets/productions/spice.png" alt="GB/ODGB Spice">
+      </div>
+
+      <div class="dog-info">
+        <h3>GB/ODGB<br>SPICE</h3>
+        <div class="lineage">PBK Thor × Gains Bullies Dahlia</div>
+
+        <p>
+          Spice is another standout production from PBK Thor and Gains Bullies Dahlia.
+          Developed through careful planning and strong pedigree selection, Spice brings
+          quality, balance and bully expression into the future of the kennel.
+        </p>
+
+        <div class="click-hint">Click image to view full gallery</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <strong>ONE DON GAZA BULLIES</strong><br>
+  Brodheadsville, Pennsylvania<br>
+
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" onclick="closeLightbox()">×</button>
+  <button class="arrow left" onclick="prevImage()">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="arrow right" onclick="nextImage()">›</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

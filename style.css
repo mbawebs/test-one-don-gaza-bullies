@@ -1,0 +1,93 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#030503;color:#fff;font-family:Inter,sans-serif;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+:root{--gold:#d6ad2f;--gold2:#ffda63;--green:#00a651;--dark:#030503}
+a{color:inherit}
+.demo{position:fixed;top:0;left:0;width:100%;z-index:99;background:linear-gradient(90deg,#d6ad2f,#ffda63,#d6ad2f);color:#080808;text-align:center;padding:10px;font-size:13px;font-weight:900;letter-spacing:1px}
+.nav{position:fixed;top:34px;left:0;width:100%;z-index:90;padding:14px 7%;display:flex;align-items:center;justify-content:space-between;background:rgba(3,5,3,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(214,173,47,.22)}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:1px;color:var(--gold2)}
+.nav-brand img{width:42px;height:42px;object-fit:contain}
+.menu-toggle{width:54px;height:44px;border:1px solid rgba(214,173,47,.65);background:rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.menu-toggle span{width:25px;height:2px;background:var(--gold2);display:block}
+.menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:900;opacity:0;pointer-events:none;transition:.25s ease}
+.menu-panel{position:fixed;top:0;right:0;width:min(440px,88vw);height:100vh;background:linear-gradient(160deg,#06180f,#020302 60%,#000);border-left:1px solid rgba(214,173,47,.4);z-index:1000;padding:90px 38px 35px;transform:translateX(105%);transition:.35s ease;overflow-y:auto;box-shadow:-30px 0 80px rgba(0,0,0,.65)}
+.menu-open .menu-overlay{opacity:1;pointer-events:auto}
+.menu-open .menu-panel{transform:translateX(0)}
+.menu-close{position:absolute;top:25px;right:25px;width:50px;height:50px;border:none;background:var(--gold);color:#000;font-size:38px;font-weight:900;cursor:pointer}
+.menu-title{font-family:Anton,sans-serif;color:var(--gold);font-size:2.35rem;line-height:.9;margin-bottom:28px;letter-spacing:1px}
+.menu-panel a{display:block;text-decoration:none;color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:1.05rem;padding:14px 0;border-bottom:1px solid rgba(214,173,47,.18)}
+.menu-panel>a:hover,.menu-group>a:hover,.submenu a:hover{color:var(--gold2)}
+.menu-group{margin:4px 0}
+.submenu{padding-left:18px;margin:2px 0 10px;border-left:3px solid rgba(214,173,47,.5)}
+.submenu a{font-size:.82rem;color:#d8d8d8;padding:10px 0;letter-spacing:1.4px;border-bottom:1px solid rgba(255,255,255,.06)}
+.hero{min-height:100vh;padding:150px 7% 80px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;position:relative;overflow:hidden;background:radial-gradient(circle at 75% 45%,rgba(0,166,81,.45),transparent 35%),radial-gradient(circle at 20% 20%,rgba(214,173,47,.25),transparent 28%),linear-gradient(135deg,#020302 0%,#06180f 45%,#020302 100%)}
+.hero:before{content:"ONE DON GAZA";position:absolute;font-family:Anton,sans-serif;font-size:15vw;color:rgba(255,255,255,.025);top:18%;left:-3%;letter-spacing:8px;white-space:nowrap}
+.hero-text,.hero-art{position:relative;z-index:2}
+.badge{display:inline-block;border:1px solid rgba(214,173,47,.7);color:var(--gold2);padding:10px 18px;font-size:12px;font-weight:900;letter-spacing:2px;margin-bottom:22px;background:rgba(0,0,0,.35)}
+h1{font-family:Anton,sans-serif;font-size:clamp(4rem,8vw,8rem);line-height:.88;color:var(--gold);text-shadow:0 0 30px rgba(214,173,47,.35);letter-spacing:3px}
+.hero-text p{margin-top:22px;max-width:620px;color:#fff;font-size:1.08rem;line-height:1.8;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.cta{margin-top:35px;display:flex;gap:15px;flex-wrap:wrap}
+.btn{text-decoration:none;padding:16px 28px;font-weight:900;letter-spacing:1px;text-transform:uppercase;font-size:13px;display:inline-block;cursor:pointer}
+.btn.gold{background:var(--gold);color:#050505}
+.btn.outline{border:1px solid var(--gold);color:#fff;background:rgba(0,0,0,.3)}
+.hero-card{position:relative;background:linear-gradient(145deg,rgba(0,166,81,.22),rgba(0,0,0,.7));border:1px solid rgba(214,173,47,.45);padding:20px;box-shadow:0 0 60px rgba(0,166,81,.28)}
+.hero-card img{width:100%;display:block;border:1px solid rgba(255,255,255,.08)}
+.hero-card span{position:absolute;left:20px;bottom:20px;background:rgba(0,0,0,.78);color:var(--gold2);padding:12px 18px;font-family:Bebas Neue,sans-serif;font-size:1.7rem;letter-spacing:2px}
+.page-hero{padding:175px 7% 90px;text-align:center;background:radial-gradient(circle at center,rgba(0,166,81,.35),transparent 40%),linear-gradient(135deg,#020302,#06180f,#020302)}
+.page-hero h1{font-size:clamp(4rem,9vw,9rem)}
+section{padding:95px 7%}
+.title{font-family:Anton,sans-serif;color:var(--gold);font-size:clamp(3rem,6vw,6rem);line-height:.9;text-align:center;letter-spacing:2px;margin-bottom:18px}
+.sub{text-align:center;max-width:900px;margin:0 auto 55px;color:#fff;line-height:1.8;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.about{background:linear-gradient(180deg,#030503,#07180f)}
+.about-box{max-width:1050px;margin:auto;border:1px solid rgba(214,173,47,.3);background:linear-gradient(135deg,rgba(0,166,81,.18),rgba(255,255,255,.03));padding:45px;text-align:center}
+.demo-note{padding:22px;background:rgba(214,173,47,.12);border-left:5px solid var(--gold);color:var(--gold2);font-weight:900;text-align:left}
+.dog-section{background:#030503}
+.dog-section.alt{background:radial-gradient(circle at 25% 45%,rgba(214,173,47,.13),transparent 35%),linear-gradient(180deg,#030503,#07180f)}
+.dog-list{display:grid;gap:80px;max-width:1320px;margin:0 auto}
+.dog-card{display:grid;grid-template-columns:.95fr 1.05fr;gap:45px;align-items:center}
+.dog-card.reverse{grid-template-columns:1.05fr .95fr}
+.dog-card.reverse .dog-img{order:2}
+.dog-card.reverse .dog-info{order:1}
+.dog-img{border:1px solid rgba(214,173,47,.5);background:radial-gradient(circle,rgba(0,166,81,.2),#020202);padding:15px;cursor:pointer;overflow:hidden}
+.dog-img img{width:100%;height:560px;object-fit:cover;display:block;transition:.35s ease}
+.dog-img:hover img{transform:scale(1.035)}
+.dog-info h3{color:var(--gold2);margin:18px 0 10px;font-family:Anton,sans-serif;font-size:clamp(3rem,6vw,6.3rem);letter-spacing:3px;text-transform:uppercase;line-height:.9}
+.lineage{display:inline-block;margin-bottom:22px;padding:9px 13px;border-left:4px solid var(--gold);background:rgba(214,173,47,.1);color:#fff;font-size:.9rem;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.dog-info p{color:#fff;line-height:1.8;font-size:1.05rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;max-width:760px}
+.click-hint{margin-top:16px;color:var(--gold2);font-size:.8rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
+.card{border:1px solid rgba(214,173,47,.35);background:linear-gradient(145deg,rgba(0,166,81,.16),rgba(0,0,0,.55));overflow:hidden}
+.card img{width:100%;height:340px;object-fit:cover;display:block}
+.card-content{padding:26px}
+.card-content h3{font-family:Anton,sans-serif;color:var(--gold2);font-size:2.1rem;letter-spacing:1px}
+.card-content p{margin-top:10px;color:#fff;line-height:1.7;font-weight:700;text-transform:uppercase;font-size:.9rem}
+.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.photo-card{position:relative;border:1px solid rgba(214,173,47,.35);overflow:hidden;background:#050505;cursor:pointer}
+.photo-card img{width:100%;height:520px;object-fit:cover;display:block;transition:.35s ease}
+.photo-card:hover img{transform:scale(1.04)}
+.productions{background:radial-gradient(circle at center,rgba(0,166,81,.22),transparent 45%),linear-gradient(180deg,#07180f,#030503)}
+.gallery{background:#030503}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.gallery-card{border:1px solid rgba(214,173,47,.3);background:#050505;overflow:hidden;cursor:pointer}
+.gallery-card img{width:100%;height:420px;object-fit:cover;display:block;transition:.35s ease}
+.gallery-card:hover img{transform:scale(1.06)}
+.contact{text-align:center;position:relative;background:linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.82)),url('assets/hero/hero.png');background-size:cover;background-position:center}
+.contact h2{font-family:Anton,sans-serif;font-size:clamp(3rem,7vw,7rem);color:var(--gold)}
+.contact-box{max-width:850px;margin:30px auto 0;padding:35px;border:1px solid rgba(214,173,47,.35);background:rgba(0,0,0,.55)}
+.contact-row{margin:14px 0;color:#e8e8e8;font-size:1.05rem}
+.socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
+.social-btn{text-decoration:none;color:#050505;background:var(--gold);padding:15px 24px;font-weight:900;text-transform:uppercase;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:#050505;color:var(--gold2);font-size:13px;font-weight:900}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;z-index:9999}
+.lightbox.active{display:flex}
+.lightbox img{max-width:88vw;max-height:86vh;object-fit:contain;border:1px solid rgba(214,173,47,.55);box-shadow:0 0 50px rgba(214,173,47,.2)}
+.close,.arrow{position:absolute;background:var(--gold);color:#000;border:none;font-weight:900;cursor:pointer}
+.close{top:25px;right:30px;width:52px;height:52px;font-size:38px}
+.arrow{top:50%;transform:translateY(-50%);width:58px;height:76px;font-size:48px}
+.arrow.left{left:25px}
+.arrow.right{right:25px}
+footer{text-align:center;padding:35px;background:#020202;color:#aaa;border-top:1px solid rgba(214,173,47,.2)}
+footer strong{color:var(--gold)}
+@media(max-width:1000px){.hero,.dog-card,.dog-card.reverse,.photo-grid,.cards{grid-template-columns:1fr}.dog-card.reverse .dog-img,.dog-card.reverse .dog-info{order:initial}.gallery-grid{grid-template-columns:1fr}.hero{padding-top:150px;text-align:center}.cta{justify-content:center}.dog-img img{height:520px}.nav-brand span{display:none}}
+@media(max-width:650px){section{padding:75px 6%}.page-hero{padding-top:155px}.photo-card img{height:350px}.gallery-card img{height:360px}.dog-img img{height:390px}.arrow{width:45px;height:62px;font-size:38px}.arrow.left{left:8px}.arrow.right{right:8px}.close{right:15px}.menu-panel{width:92vw;padding:85px 28px 30px}.menu-title{font-size:2rem}}

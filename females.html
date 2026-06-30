@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONE DON GAZA BULLIES | Females</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d6ad2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ODG Bullies">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">  
+<link rel="icon" type="image/png" href="assets/hero/logo.png">  
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>  
+<body>
+
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/hero/logo.png" alt="One Don Gaza Bullies Logo">
+    <span>ONE DON GAZA BULLIES</span>
+  </a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay"></div>
+
+<aside class="menu-panel">
+
+<button class="menu-close" onclick="closeMenu()">×</button>
+
+<div class="menu-title">ONE DON GAZA BULLIES</div>
+
+<a href="index.html" onclick="closeMenu()">Home</a>
+
+<div class="menu-group">
+<a href="studs.html" onclick="closeMenu()">Studs</a>
+<div class="submenu">
+<a href="studs.html" onclick="closeMenu()">Black Rhyno</a>
+</div>
+</div>
+
+<div class="menu-group">
+<a href="females.html" onclick="closeMenu()">Females</a>
+<div class="submenu">
+<a href="females.html" onclick="closeMenu()">GB Mystic</a>
+<a href="females.html" onclick="closeMenu()">VMB Celine</a>
+</div>
+</div>
+
+<div class="menu-group">
+<a href="productions.html" onclick="closeMenu()">Productions</a>
+<div class="submenu">
+<a href="productions.html" onclick="closeMenu()">Diplomat</a>
+<a href="productions.html" onclick="closeMenu()">Wizard</a>
+<a href="productions.html" onclick="closeMenu()">Spice</a>
+</div>
+</div>
+
+<a href="gallery.html" onclick="closeMenu()">Gallery</a>
+<a href="contact.html" onclick="closeMenu()">Contact</a>
+
+</aside>
+
+<header class="page-hero">
+<div class="badge">FEMALE LINEUP</div>
+<h1>FEMALES</h1>
+<p class="sub">
+Females and future producers representing the kennel foundation.
+</p>
+</header>
+
+<section class="dog-section alt">
+
+<div class="dog-list">
+
+<div class="dog-card">
+
+<div class="dog-img" onclick="openLightbox('mystic',0)">
+<img src="assets/females/mystic_01.png" alt="GB Mystic">
+</div>
+
+<div class="dog-info">
+
+<h3>GB<br>MYSTIC</h3>
+
+<div class="lineage">
+Phonkingstyle Juggernaut × Gains Bully Bad Betty
+</div>
+
+<p>
+GB Mystic is out of Phonkingstyle Juggernaut and Gains Bully Bad Betty.
+A foundation female with strong pedigree influence, quality structure and
+the type needed for consistent productions.
+</p>
+
+<div class="click-hint">
+Click image to view full gallery
+</div>
+
+</div>
+
+</div>
+
+<div class="dog-card reverse">
+
+<div class="dog-img" onclick="openLightbox('celine',0)">
+<img src="assets/females/celine_01.png" alt="VMB Celine">
+</div>
+
+<div class="dog-info">
+
+<h3>VMB<br>CELINE</h3>
+
+<div class="lineage">
+ODB Big Rich × VMB Issa Bonet
+</div>
+
+<p>
+VMB Celine is out of ODB Big Rich and VMB Issa Bonet.
+A compact female with good proportions, breed type and valuable blood behind
+her for the One Don Gaza Bullies program.
+</p>
+
+<div class="click-hint">
+Click image to view full gallery
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<strong>ONE DON GAZA BULLIES</strong><br>
+Brodheadsville, Pennsylvania<br>
+</footer>
+
+<div class="lightbox" id="lightbox">
+<button class="close" onclick="closeLightbox()">×</button>
+<button class="arrow left" onclick="prevImage()">‹</button>
+<img id="lightboxImg" src="" alt="">
+<button class="arrow right" onclick="nextImage()">›</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

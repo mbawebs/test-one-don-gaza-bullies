@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONE DON GAZA BULLIES | Home</title>
+<link rel="icon" type="image/png" href="assets/hero/logo.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d6ad2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ODG Bullies">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="index.html">
+    <img src="assets/hero/logo.png" alt="One Don Gaza Bullies Logo">
+    <span>ONE DON GAZA BULLIES</span>
+  </a>
+
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay"></div>
+
+<aside class="menu-panel">
+  <button class="menu-close" onclick="closeMenu()" aria-label="Close menu">×</button>
+  <div class="menu-title">ONE DON GAZA BULLIES</div>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <div class="menu-group"><a href="studs.html" onclick="closeMenu()">Studs</a><div class="submenu"><a href="studs.html" onclick="closeMenu()">Black Rhyno</a></div></div>
+  <div class="menu-group"><a href="females.html" onclick="closeMenu()">Females</a><div class="submenu"><a href="females.html" onclick="closeMenu()">GB Mystic</a><a href="females.html" onclick="closeMenu()">VMB Celine</a></div></div>
+  <div class="menu-group"><a href="productions.html" onclick="closeMenu()">Productions</a><div class="submenu"><a href="productions.html" onclick="closeMenu()">Diplomat</a><a href="productions.html" onclick="closeMenu()">Wizard</a><a href="productions.html" onclick="closeMenu()">Spice</a></div></div>
+  <a href="gallery.html" onclick="closeMenu()">Gallery</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</aside>
+
+<header class="hero">
+  <div class="hero-text">
+    <div class="badge">AMERICAN BULLY KENNEL</div>
+    <h1>ONE DON GAZA<br>BULLIES</h1>
+    <p>ABKC REGISTERED • COMMITTED TO QUALITY • BREEDING TO THE STANDARD</p>
+    <div class="cta">
+      <a class="btn gold" href="studs.html">View Studs</a>
+      <a class="btn outline" href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="hero-card">
+      <img src="assets/hero/hero.png" alt="One Don Gaza Bullies">
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <h2 class="title">ABOUT ONE DON GAZA BULLIES</h2>
+  <p class="sub">Dedicated to producing healthy, functional American Bullies with correct structure, sound temperament and true bully type.</p>
+</section>
+
+<section class="dog-section">
+  <h2 class="title">FEATURED STUD</h2>
+  <div class="dog-list">
+    <div class="dog-card">
+      <div class="dog-img" onclick="openLightbox('black_rhyno',0)">
+        <img src="assets/studs/black_rhyno1.png" alt="Black Rhyno">
+      </div>
+      <div class="dog-info">
+        <h3>ODGB/GB<br>BLACK RHYNO</h3>
+        <div class="lineage">PBK Hellboy × GB Mystic</div>
+        <p>Black Rhyno represents the direction of the One Don Gaza Bullies stud program: compact, powerful, heavy-boned and true to bully type.</p>
+        <br><br>
+        <a class="btn gold" href="studs.html">View Studs Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dog-section alt">
+  <h2 class="title">FEATURED FEMALE</h2>
+  <div class="dog-list">
+    <div class="dog-card reverse">
+      <div class="dog-img" onclick="openLightbox('mystic',0)">
+        <img src="assets/females/mystic_01.png" alt="GB Mystic">
+      </div>
+      <div class="dog-info">
+        <h3>GB<br>MYSTIC</h3>
+        <div class="lineage">Phonkingstyle Juggernaut × Gains Bully Bad Betty</div>
+        <p>Mystic represents the foundation females behind the One Don Gaza Bullies program with structure, pedigree influence and breed quality.</p>
+        <br><br>
+        <a class="btn gold" href="females.html">View Females Page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="productions">
+  <h2 class="title">LATEST PRODUCTIONS</h2>
+  <p class="sub">Young prospects and productions from the program.</p>
+  <div class="cards">
+    <div class="card">
+      <img src="assets/productions/diplomat.png" alt="Diplomat">
+      <div class="card-content">
+        <h3>DIPLOMAT</h3>
+        <p>Male keeper / production from PBK Thor × Gains Bullies Dahlia.</p>
+        <br>
+        <a class="btn gold" href="productions.html">View Productions</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/productions/wizard.png" alt="Wizard">
+      <div class="card-content">
+        <h3>WIZARD</h3>
+        <p>Young prospect from PBK Thor × Gains Bullies Dahlia.</p>
+        <br>
+        <a class="btn gold" href="productions.html">See More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/gallery/gallery_01.png" alt="Gallery">
+      <div class="card-content">
+        <h3>GALLERY</h3>
+        <p>A closer look at dogs, productions and kennel life.</p>
+        <br>
+        <a class="btn gold" href="gallery.html">Open Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>CONTACT US</h2>
+  <p class="sub">For stud inquiries, upcoming productions or general questions, reach out through social media.</p>
+  <div class="contact-box">
+    <div class="contact-row"><strong>Location:</strong> Brodheadsville, Pennsylvania 18322</div>
+    <div class="socials">
+      <a class="social-btn" href="https://www.instagram.com/one_dongazabullies/" target="_blank"><span class="icon">IG</span> Message On Instagram</a>
+      <a class="social-btn" href="contact.html"><span class="icon">→</span> Contact Page</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>ONE DON GAZA BULLIES</strong><br>
+  Brodheadsville, Pennsylvania
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close" onclick="closeLightbox()">×</button>
+  <button class="arrow left" onclick="prevImage()">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="arrow right" onclick="nextImage()">›</button>
+</div>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

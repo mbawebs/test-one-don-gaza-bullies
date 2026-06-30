@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODG Waitlist</title>
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+body{margin:0;background:#070707;color:#fff;font-family:Arial,sans-serif;padding:24px}
+.wrap{max-width:1100px;margin:auto}
+h1{font-size:42px;margin:0;color:#d6ad2f}
+.card{background:#111;border:1px solid rgba(214,173,47,.35);border-radius:16px;padding:18px;margin-top:18px}
+button{background:#d6ad2f;color:#111;border:0;border-radius:10px;padding:12px 16px;font-weight:900;cursor:pointer}
+table{width:100%;border-collapse:collapse;margin-top:18px}
+th,td{text-align:left;padding:12px;border-bottom:1px solid #333;white-space:nowrap}
+th{color:#d6ad2f}
+.table-wrap{overflow-x:auto}
+.total{font-weight:900;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>ODG WAITLIST</h1>
+  <div class="total" id="total">Loading...</div>
+
+  <div class="card">
+    <button onclick="downloadCSV()">Export CSV</button>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr><td colspan="4">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL = "https://drpfmwdqnktgofxlluyr.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_4Ex_ShO1dYKbUmnSCOvVNg_098EbclB";
+
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let waitlistData = [];
+
+loadWaitlist();
+
+async function loadWaitlist(){
+  const { data, error } = await supabaseClient
+    .from("waitlist")
+    .select("name,email,phone,created_at")
+    .order("created_at", { ascending:false });
+
+  if(error){
+    document.getElementById("rows").innerHTML = `<tr><td colspan="4">Error loading waitlist.</td></tr>`;
+    console.error(error);
+    return;
+  }
+
+  waitlistData = data || [];
+  document.getElementById("total").textContent = `${waitlistData.length} entries`;
+
+  if(waitlistData.length === 0){
+    document.getElementById("rows").innerHTML = `<tr><td colspan="4">No entries yet.</td></tr>`;
+    return;
+  }
+
+  document.getElementById("rows").innerHTML = waitlistData.map(item => `
+    <tr>
+      <td>${item.name || ""}</td>
+      <td>${item.email || ""}</td>
+      <td>${item.phone || ""}</td>
+      <td>${item.created_at ? new Date(item.created_at).toLocaleString() : ""}</td>
+    </tr>
+  `).join("");
+}
+
+function downloadCSV(){
+  if(waitlistData.length === 0){
+    alert("No entries to export.");
+    return;
+  }
+
+  const headers = ["Name","Email","Phone","Date"];
+  const rows = waitlistData.map(item => [
+    item.name || "",
+    item.email || "",
+    item.phone || "",
+    item.created_at || ""
+  ]);
+
+  const csv = [headers, ...rows]
+    .map(row => row.map(value => `"${String(value).replace(/"/g,'""')}"`).join(","))
+    .join("\n");
+
+  const blob = new Blob([csv], { type:"text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "odg-waitlist.csv";
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
