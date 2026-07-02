@@ -81,6 +81,7 @@ function registerGallery(galleryName, photos) {
 function renderFemaleCard(female, index) {
   const photos = normalizePhotos(female.photos);
   const hasPhoto = photos.length > 0;
+  const cardClass = index % 2 === 1 ? "dog-card reverse" : "dog-card";
   const galleryId = String(female.id ?? index).replace(/[^a-zA-Z0-9_-]/g, "");
   const galleryName = `public_female_${galleryId || index}`;
   const name = formatName(female.name);
@@ -119,7 +120,7 @@ function renderFemaleCard(female, index) {
     : "";
 
   return `
-    <div class="dog-card">
+    <div class="${cardClass}">
       ${imageHtml}
 
       <div class="dog-info">
@@ -135,7 +136,6 @@ function renderFemaleCard(female, index) {
 
         <br><br>
         ${pedigreeHtml}
-        <a class="btn gold" href="contact.html">Contact For Female Info</a>
       </div>
     </div>
   `;
