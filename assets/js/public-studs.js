@@ -12,6 +12,10 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;");
 }
 
+function formatName(value) {
+  return escapeHtml(value || "Unnamed Stud").replace(/\r?\n/g, "<br>");
+}
+
 function normalizePhotos(photos) {
   const normalizeList = (items) =>
     items
@@ -63,7 +67,8 @@ function renderDogCard(dog, index) {
   const hasPhoto = photos.length > 0;
   const galleryId = String(dog.id ?? index).replace(/[^a-zA-Z0-9_-]/g, "");
   const galleryName = `public_stud_${galleryId || index}`;
-  const name = escapeHtml(dog.name || "Unnamed Stud");
+  const name = formatName(dog.name);
+  const imageAlt = escapeHtml(dog.name || "Unnamed Stud");
   const lineage = String(dog.lineage ?? "").trim();
   const description = escapeHtml(dog.description || "");
   const pedigreeUrl = getSafeUrl(dog.pedigree_url);
@@ -73,7 +78,7 @@ function renderDogCard(dog, index) {
   const imageHtml = hasPhoto
     ? `
       <div class="dog-img" style="position: relative;" onclick="openLightbox('${galleryName}',0)">
-        <img src="${escapeHtml(photos[0])}" alt="${name}" onerror="this.onerror=null; const box=this.parentElement; const hint=box.closest('.dog-card').querySelector('.click-hint'); this.src='${EMPTY_IMAGE}'; box.onclick=null; box.querySelector('.no-photo').style.display='flex'; if (typeof galleries !== 'undefined') galleries['${galleryName}']=[]; if(hint) hint.style.display='none';">
+        <img src="${escapeHtml(photos[0])}" alt="${imageAlt}" onerror="this.onerror=null; const box=this.parentElement; const hint=box.closest('.dog-card').querySelector('.click-hint'); this.src='${EMPTY_IMAGE}'; box.onclick=null; box.querySelector('.no-photo').style.display='flex'; if (typeof galleries !== 'undefined') galleries['${galleryName}']=[]; if(hint) hint.style.display='none';">
         <span class="no-photo" style="display: none; position: absolute; inset: 15px; align-items: center; justify-content: center; text-align: center; color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; pointer-events: none;">No photo available</span>
       </div>`
     : `
