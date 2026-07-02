@@ -165,6 +165,7 @@ async function loadPublicStuds() {
     .schema("public")
     .from("dogs")
     .select("*")
+    .order("display_order", { ascending: true })
     .order("created_at", { ascending: false });
 
   if (error) {
