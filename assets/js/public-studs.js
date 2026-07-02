@@ -56,6 +56,39 @@ function getSafeUrl(value) {
   return url.startsWith("http") || url.startsWith("assets/") ? url : "";
 }
 
+function formatStudFee(value) {
+  const fee = String(value ?? "").trim();
+  if (!fee) return "";
+
+  if (/^\d+(\.\d+)?$/.test(fee)) {
+    const amount = Number(fee);
+    return `$${amount.toLocaleString("en-US")} USD`;
+  }
+
+  return fee;
+}
+
+function getDogDetails(dog) {
+  const details = [];
+  const age = String(dog.age ?? "").trim();
+  const color = String(dog.color ?? "").trim();
+  const studFee = formatStudFee(dog.stud_fee);
+
+  if (age) {
+    details.push(`AGE: ${escapeHtml(age)}`);
+  }
+
+  if (color) {
+    details.push(`COLOR: ${escapeHtml(color.toUpperCase())}`);
+  }
+
+  if (studFee) {
+    details.push(`STUD FEE: ${escapeHtml(studFee)}`);
+  }
+
+  return details.join(" &bull; ");
+}
+
 function registerGallery(galleryName, photos) {
   if (typeof galleries !== "undefined") {
     galleries[galleryName] = photos;
@@ -70,6 +103,7 @@ function renderDogCard(dog, index) {
   const name = formatName(dog.name);
   const imageAlt = escapeHtml(dog.name || "Unnamed Stud");
   const lineage = String(dog.lineage ?? "").trim();
+  const details = getDogDetails(dog);
   const description = escapeHtml(dog.description || "");
   const pedigreeUrl = getSafeUrl(dog.pedigree_url);
 
@@ -96,6 +130,10 @@ function renderDogCard(dog, index) {
     ? `
         <div class="lineage">${escapeHtml(lineage)}</div>`
     : "";
+  const detailsHtml = details
+    ? `
+        <div class="stud-details" style="display: block; margin-top: 8px; margin-bottom: 22px; color: var(--gold2); font-size: .78rem; line-height: 1.6; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">${details}</div>`
+    : "";
 
   return `
     <div class="dog-card">
@@ -104,6 +142,7 @@ function renderDogCard(dog, index) {
       <div class="dog-info">
         <h3>${name}</h3>
         ${lineageHtml}
+        ${detailsHtml}
 
         <p>
           ${description}
